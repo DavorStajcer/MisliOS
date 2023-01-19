@@ -20,21 +20,21 @@ mixin _$EventsState {
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
     required TResult Function() loading,
-    required TResult Function(List<String> eventBodies) data,
+    required TResult Function(List<EventModel> eventBodies) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<String> eventBodies)? data,
+    TResult Function(List<EventModel> eventBodies)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<String> eventBodies)? data,
+    TResult Function(List<EventModel> eventBodies)? data,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -143,7 +143,7 @@ class _$_Failure implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
     required TResult Function() loading,
-    required TResult Function(List<String> eventBodies) data,
+    required TResult Function(List<EventModel> eventBodies) data,
   }) {
     return failure(message);
   }
@@ -153,7 +153,7 @@ class _$_Failure implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<String> eventBodies)? data,
+    TResult Function(List<EventModel> eventBodies)? data,
   }) {
     return failure?.call(message);
   }
@@ -163,7 +163,7 @@ class _$_Failure implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<String> eventBodies)? data,
+    TResult Function(List<EventModel> eventBodies)? data,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -257,7 +257,7 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
     required TResult Function() loading,
-    required TResult Function(List<String> eventBodies) data,
+    required TResult Function(List<EventModel> eventBodies) data,
   }) {
     return loading();
   }
@@ -267,7 +267,7 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<String> eventBodies)? data,
+    TResult Function(List<EventModel> eventBodies)? data,
   }) {
     return loading?.call();
   }
@@ -277,7 +277,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<String> eventBodies)? data,
+    TResult Function(List<EventModel> eventBodies)? data,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -329,7 +329,7 @@ abstract class _Loading implements EventsState {
 abstract class _$$_DataCopyWith<$Res> {
   factory _$$_DataCopyWith(_$_Data value, $Res Function(_$_Data) then) =
       __$$_DataCopyWithImpl<$Res>;
-  $Res call({List<String> eventBodies});
+  $Res call({List<EventModel> eventBodies});
 }
 
 /// @nodoc
@@ -349,7 +349,7 @@ class __$$_DataCopyWithImpl<$Res> extends _$EventsStateCopyWithImpl<$Res>
       eventBodies == freezed
           ? _value._eventBodies
           : eventBodies // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<EventModel>,
     ));
   }
 }
@@ -357,11 +357,12 @@ class __$$_DataCopyWithImpl<$Res> extends _$EventsStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Data implements _Data {
-  const _$_Data(final List<String> eventBodies) : _eventBodies = eventBodies;
+  const _$_Data(final List<EventModel> eventBodies)
+      : _eventBodies = eventBodies;
 
-  final List<String> _eventBodies;
+  final List<EventModel> _eventBodies;
   @override
-  List<String> get eventBodies {
+  List<EventModel> get eventBodies {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_eventBodies);
   }
@@ -394,7 +395,7 @@ class _$_Data implements _Data {
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
     required TResult Function() loading,
-    required TResult Function(List<String> eventBodies) data,
+    required TResult Function(List<EventModel> eventBodies) data,
   }) {
     return data(eventBodies);
   }
@@ -404,7 +405,7 @@ class _$_Data implements _Data {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<String> eventBodies)? data,
+    TResult Function(List<EventModel> eventBodies)? data,
   }) {
     return data?.call(eventBodies);
   }
@@ -414,7 +415,7 @@ class _$_Data implements _Data {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<String> eventBodies)? data,
+    TResult Function(List<EventModel> eventBodies)? data,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -459,9 +460,9 @@ class _$_Data implements _Data {
 }
 
 abstract class _Data implements EventsState {
-  const factory _Data(final List<String> eventBodies) = _$_Data;
+  const factory _Data(final List<EventModel> eventBodies) = _$_Data;
 
-  List<String> get eventBodies;
+  List<EventModel> get eventBodies;
   @JsonKey(ignore: true)
   _$$_DataCopyWith<_$_Data> get copyWith => throw _privateConstructorUsedError;
 }

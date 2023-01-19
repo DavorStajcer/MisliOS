@@ -48,6 +48,7 @@ dependencies:
   cloud_firestore: ^4.3.1
   json_serializable: ^6.5.4
   http: ^0.13.5
+  dotted_line: ^3.1.0
   
 dev_dependencies:
   flutter_test:

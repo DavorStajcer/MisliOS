@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:misli_os_app/domain/models/event_model.dart';
 import 'package:misli_os_app/presentation/home/widgets/event_text.dart';
 
 class Event extends StatelessWidget {
-  const Event({super.key});
+  final EventModel eventModel;
+  const Event({
+    super.key,
+    required this.eventModel,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +29,12 @@ class Event extends StatelessWidget {
         const SizedBox(
           width: 50,
         ),
-        const Expanded(
+        Expanded(
           child: SizedBox(
             height: 350,
-            child: EventText(),
+            child: EventText(
+              eventModel: eventModel,
+            ),
           ),
         )
       ],
