@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "561508743897",
+    "project_id": "misli-os",
+    "storage_bucket": "misli-os.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561508743897:android:daff89359f58aa9b8cdcc8",
+        "android_client_info": {
+          "package_name": "com.example.misli_os_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561508743897-s7br8ct93u385q8vk3bodp8ki6plhqd4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR0aKR2BvLVP7JDFNlgdYdXbf4xgTzkbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561508743897-s7br8ct93u385q8vk3bodp8ki6plhqd4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

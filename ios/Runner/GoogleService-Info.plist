@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>561508743897-rm1bq5c431nslv7cmj05hasrkd0oc8ig.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.561508743897-rm1bq5c431nslv7cmj05hasrkd0oc8ig</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBXDGuK_sDjNkJP5_0uOz2fY1ACgclpPS0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>561508743897</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.misliOsApp</string>
+	<key>PROJECT_ID</key>
+	<string>misli-os</string>
+	<key>STORAGE_BUCKET</key>
+	<string>misli-os.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:561508743897:ios:6dfe079b164038898cdcc8</string>
+</dict>
+</plist>
