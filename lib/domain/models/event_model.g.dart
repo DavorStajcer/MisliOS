@@ -9,10 +9,12 @@ part of 'event_model.dart';
 EventModel _$EventModelFromJson(Map<String, dynamic> json) => EventModel(
       body: json['body'] as String,
       dateCreated: DateTime.parse(json['dateCreated'] as String),
+      imageUrl: json['imageUrl'] as String,
     );
 
 Map<String, dynamic> _$EventModelToJson(EventModel instance) =>
     <String, dynamic>{
       'body': instance.body,
       'dateCreated': instance.dateCreated.toIso8601String(),
+      'imageUrl': instance.imageUrl,
     };

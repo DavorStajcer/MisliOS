@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/models/home_tab.dart';
 import 'package:misli_os_app/domain/providers/tab_hovered_provider/tab_hovered_provider.dart';
-import 'package:misli_os_app/domain/providers/tab_selected_provider/tab_selected_provider.dart';
+import 'package:misli_os_app/domain/providers/tab_picked_provider/tab_index_provider.dart';
 import 'package:misli_os_app/domain/providers/tab_state_provider/tab_state_provider.dart';
 import 'package:misli_os_app/presentation/home/widgets/tab_hovered.dart';
 import 'package:misli_os_app/presentation/home/widgets/tab_selected.dart';
@@ -26,8 +26,7 @@ class Tabitem extends ConsumerWidget {
       onExit: (event) =>
           ref.read(tabHoveredProvider.notifier).onTabHovered(null),
       child: GestureDetector(
-        onTap: () =>
-            ref.read(tabSelectedProvider.notifier).onTabSelected(tabIndex),
+        onTap: () => ref.read(tabIndexProvider.notifier).state = tabIndex,
         child: tabState.when(
           unselected: () => TabUnselected(homeTab),
           selected: () => TabSelected(homeTab),

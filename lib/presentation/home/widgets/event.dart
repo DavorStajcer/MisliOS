@@ -16,11 +16,11 @@ class Event extends StatelessWidget {
         Container(
           height: 350,
           width: 300,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(24)),
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(24)),
             image: DecorationImage(
               image: NetworkImage(
-                'https://upload.wikimedia.org/wikipedia/commons/2/21/Trg_sv._Trojstva_Osijek.jpg',
+                eventModel.imageUrl,
               ),
               fit: BoxFit.fitHeight,
             ),

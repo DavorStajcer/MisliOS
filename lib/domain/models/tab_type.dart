@@ -1,4 +1,4 @@
 abstract class TabType {
-  static const String naslovnica = 'Naslovnica';
-  static const String html = 'Html';
+  static const String naslovnica = 'naslovnica';
+  static const String html = 'html';
 }

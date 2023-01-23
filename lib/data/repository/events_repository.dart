@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/common/exception.dart';
 import 'package:misli_os_app/common/network_info.dart';
@@ -27,7 +28,7 @@ class EventsRepositoryImpl extends EventsRepository {
     try {
       final querySnapshot = await FirebaseFirestore.instance
           .collection('events')
-          .orderBy('dateCreated')
+          .orderBy('dateCreated', descending: true)
           .get();
       final List<EventModel> eventHtmlBodies = [];
       for (var docSnapshot in querySnapshot.docs) {
