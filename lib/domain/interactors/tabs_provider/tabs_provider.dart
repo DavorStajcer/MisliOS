@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/common/exception.dart';
 import 'package:misli_os_app/data/repository/tabs_repository.dart';
@@ -20,7 +18,6 @@ class TabsNotifier extends StateNotifier<TabsState> {
     try {
       final tabs = await _tabsRepository.getTabs();
       state = TabsState.data(tabs);
-      log('tabs: fetched tabs $tabs');
     } on AppException catch (e) {
       state = TabsState.failure(e.message);
     }

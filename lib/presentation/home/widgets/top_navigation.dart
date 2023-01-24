@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/interactors/window_size_provider/window_size_provider.dart';
@@ -11,7 +9,6 @@ class TopNavigation extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    log('windowstuff: building top navigation');
     final size = ref.watch(windowSizeProvider);
     return SizedBox(
       height: 100,

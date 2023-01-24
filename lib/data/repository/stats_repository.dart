@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/common/exception.dart';
@@ -36,8 +34,6 @@ class StatsRepositoryImpl extends StatsRepository {
       final MisliOsStats misliOsStats = MisliOsStats.fromJson(fireStats);
       return misliOsStats;
     } catch (e) {
-      log('stats repo, $e');
-
       throw ServerException('Could not fetch data from server. Try again.');
     }
   }

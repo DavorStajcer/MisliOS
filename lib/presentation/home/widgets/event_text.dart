@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:html/dom.dart' as dom;
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -28,7 +27,6 @@ class EventText extends StatelessWidget {
 
   void _onHtmlLinkTap(String? url, RenderContext renderContexct,
       Map<String, String> attributes, dom.Element? element) {
-    log('On link tap, url $url');
     if (url == null) {
       return;
     }

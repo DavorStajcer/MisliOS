@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/common/exception.dart';
@@ -35,7 +33,6 @@ class TabsRepositoryImpl extends TabsRepository {
       final List<HomeTab> tabs = [];
       for (var docSnapshot in querySnapshot.docs) {
         final fireTab = docSnapshot.data();
-        log('$fireTab');
         final String type = fireTab['type'];
         final HomeTab tab;
         if (type == TabType.naslovnica) {
@@ -45,10 +42,8 @@ class TabsRepositoryImpl extends TabsRepository {
         }
         tabs.add(tab);
       }
-      log('tabs: tabs repo, returning $tabs');
       return tabs;
     } catch (e) {
-      log('tabs repo, $e');
       throw ServerException('Could not fetch data from server. Try again.');
     }
   }

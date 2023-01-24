@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/common/exception.dart';
 import 'package:misli_os_app/common/network_info.dart';
@@ -33,14 +30,11 @@ class EventsRepositoryImpl extends EventsRepository {
       final List<EventModel> eventHtmlBodies = [];
       for (var docSnapshot in querySnapshot.docs) {
         final fireEvent = docSnapshot.data();
-        log('$fireEvent');
         final event = EventModel.fromJson(fireEvent);
         eventHtmlBodies.add(event);
       }
-      log('events: events repo, returning $eventHtmlBodies');
       return eventHtmlBodies;
     } catch (e) {
-      log('events repo, $e');
       throw ServerException('Could not fetch data from server. Try again.');
     }
   }

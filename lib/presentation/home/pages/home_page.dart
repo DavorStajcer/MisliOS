@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/providers/home_page_loading_provider/home_page_loading_provider.dart';
@@ -14,7 +12,6 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final homePageLoadingState = ref.watch(homePageLoadingProvider);
-    log('home page builder, homePageLoadingState $homePageLoadingState');
     return SingleChildScrollView(
       controller: ref.read(pageScrollControllerProvider),
       child: homePageLoadingState.when(
