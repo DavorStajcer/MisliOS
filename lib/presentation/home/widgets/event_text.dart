@@ -4,7 +4,8 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:misli_os_app/domain/models/event_model.dart';
 import 'package:misli_os_app/presentation/common/util/custom_html_tags.dart';
 import 'package:misli_os_app/presentation/common/util/html_render_matcher.dart';
-import 'package:misli_os_app/presentation/common/values/text_styles.dart';
+import 'package:misli_os_app/presentation/common/values/app_strings.dart';
+import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class EventText extends StatelessWidget {
@@ -63,15 +64,15 @@ class EventText extends StatelessWidget {
             children: [
               Text(
                 text,
-                style: TextStyles.eventTitle.copyWith(
+                style: AppTextStyles.eventTitle.copyWith(
                   decoration: underlined ? TextDecoration.underline : null,
                   color: highlight ? Colors.lightBlue : null,
                 ),
               ),
               didHappen
                   ? const Text(
-                      '(Odrzano)',
-                      style: TextStyles.eventTitle,
+                      AppStrings.odrzano,
+                      style: AppTextStyles.eventTitle,
                     )
                   : const SizedBox(),
             ],

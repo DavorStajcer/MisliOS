@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:misli_os_app/presentation/common/values/text_styles.dart';
+import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 
 class StatText extends StatefulWidget {
   final int count;
@@ -42,13 +42,13 @@ class _StatTextState extends State<StatText>
       children: [
         Text(
           count.toString(),
-          style: TextStyles.homeStat.copyWith(
+          style: AppTextStyles.homeStat.copyWith(
             fontWeight: FontWeight.bold,
           ),
         ),
         Text(
           widget.label,
-          style: TextStyles.homeStat,
+          style: AppTextStyles.homeStat,
         ),
       ],
     );

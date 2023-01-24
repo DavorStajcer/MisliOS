@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/interactors/stats_provider/stats_provider.dart';
 import 'package:misli_os_app/domain/interactors/tabs_provider/tabs_provider.dart';
+import 'package:misli_os_app/presentation/common/values/app_strings.dart';
 
 class HomePageReload extends ConsumerWidget {
   final String errorMessage;
@@ -26,7 +27,7 @@ class HomePageReload extends ConsumerWidget {
         ),
         ElevatedButton(
           onPressed: () => _reloadHomePageData(ref),
-          child: const Text('Reload page'),
+          child: const Text(AppStrings.reloadPage),
         ),
       ],
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:misli_os_app/presentation/common/util/custom_html_tags.dart';
 import 'package:misli_os_app/presentation/common/util/html_render_matcher.dart';
-import 'package:misli_os_app/presentation/common/values/text_styles.dart';
+import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 import 'package:misli_os_app/presentation/home/widgets/go_to_top.dart';
 
 class CustomContent extends StatelessWidget {
@@ -48,7 +48,7 @@ class CustomContent extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Text(
                     text,
-                    style: TextStyles.eventTitle.copyWith(
+                    style: AppTextStyles.eventTitle.copyWith(
                       decoration: underlined ? TextDecoration.underline : null,
                       color: highlight ? Colors.lightBlue : null,
                     ),

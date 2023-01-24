@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/providers/go_to_top_offset_provider/go_to_top_offset_provider.dart';
-import 'package:misli_os_app/presentation/common/values/text_styles.dart';
+import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 import 'package:misli_os_app/presentation/common/widgets/hover_text.dart';
 
 class GoToTop extends ConsumerWidget {
@@ -20,9 +20,9 @@ class GoToTop extends ConsumerWidget {
         ),
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: HoverText(
-          'Vrati se na vrh',
-          hoveredStyle: TextStyles.normal.copyWith(color: Colors.white60),
-          style: TextStyles.normal.copyWith(color: Colors.white),
+          '',
+          hoveredStyle: AppTextStyles.normal.copyWith(color: Colors.white60),
+          style: AppTextStyles.normal.copyWith(color: Colors.white),
         ),
       ),
     );

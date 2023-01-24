@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:misli_os_app/domain/models/home_tab.dart';
-import 'package:misli_os_app/presentation/common/values/text_styles.dart';
+import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 
 class TabHovered extends StatelessWidget {
   final HomeTab homeTab;
@@ -28,7 +28,7 @@ class TabHovered extends StatelessWidget {
       ),
       child: Text(
         homeTab.text,
-        style: TextStyles.tabText,
+        style: AppTextStyles.tabText,
       ),
     );
   }

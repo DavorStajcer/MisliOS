@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/interactors/stats_provider/stats_provider.dart';
+import 'package:misli_os_app/presentation/common/values/app_strings.dart';
 import 'package:misli_os_app/presentation/home/widgets/stat_text.dart';
 
 class HomeStats extends ConsumerWidget {
@@ -20,15 +21,15 @@ class HomeStats extends ConsumerWidget {
             const SizedBox(),
             StatText(
               count: stats.projects,
-              label: 'Proveden projekt',
+              label: AppStrings.provedenProjekt,
             ),
             StatText(
               count: stats.members,
-              label: 'Članova udruge',
+              label: AppStrings.clanovaUdruge,
             ),
             StatText(
               count: stats.honorableMembers,
-              label: 'Počasnih članova',
+              label: AppStrings.pocasnihClanova,
             ),
             const SizedBox(),
           ],

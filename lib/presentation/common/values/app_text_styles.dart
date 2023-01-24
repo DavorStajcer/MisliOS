@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract class TextStyles {
+abstract class AppTextStyles {
   static const TextStyle tabText = TextStyle(
     fontSize: 18,
   );

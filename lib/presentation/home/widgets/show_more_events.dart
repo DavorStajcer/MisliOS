@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/models/event_model.dart';
 import 'package:misli_os_app/domain/providers/show_more_events_provider/show_more_events_provider.dart';
-import 'package:misli_os_app/presentation/common/values/text_styles.dart';
+import 'package:misli_os_app/presentation/common/values/app_strings.dart';
+import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 import 'package:misli_os_app/presentation/common/widgets/hover_text.dart';
 import 'package:misli_os_app/presentation/home/widgets/event.dart';
 
@@ -83,10 +84,11 @@ class ShowMoreEvents extends ConsumerWidget {
                           .read(showMoreEventsProvider.notifier)
                           .state = true,
                       child: HoverText(
-                        'Prikaži sve projekte',
-                        style: TextStyles.normal.copyWith(color: Colors.blue),
+                        AppStrings.prikaziSveProjekte,
+                        style:
+                            AppTextStyles.normal.copyWith(color: Colors.blue),
                         hoveredStyle:
-                            TextStyles.normal.copyWith(color: Colors.grey),
+                            AppTextStyles.normal.copyWith(color: Colors.grey),
                       ),
                     ),
                   )
