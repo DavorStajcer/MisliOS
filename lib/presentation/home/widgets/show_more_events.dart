@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/models/event_model.dart';
 import 'package:misli_os_app/domain/providers/show_more_events_provider/show_more_events_provider.dart';
-import 'package:misli_os_app/presentation/common/hover_text.dart';
-import 'package:misli_os_app/presentation/common/text_styles.dart';
+import 'package:misli_os_app/presentation/common/values/text_styles.dart';
+import 'package:misli_os_app/presentation/common/widgets/hover_text.dart';
 import 'package:misli_os_app/presentation/home/widgets/event.dart';
 
 class ShowMoreEvents extends ConsumerWidget {

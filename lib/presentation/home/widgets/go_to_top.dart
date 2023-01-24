@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/providers/go_to_top_offset_provider/go_to_top_offset_provider.dart';
-import 'package:misli_os_app/presentation/common/hover_text.dart';
-import 'package:misli_os_app/presentation/common/text_styles.dart';
+import 'package:misli_os_app/presentation/common/values/text_styles.dart';
+import 'package:misli_os_app/presentation/common/widgets/hover_text.dart';
 
 class GoToTop extends ConsumerWidget {
   const GoToTop({super.key});

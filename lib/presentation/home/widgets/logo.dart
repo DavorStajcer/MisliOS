@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:misli_os_app/presentation/common/app_images.dart';
+import 'package:misli_os_app/presentation/common/values/app_images.dart';
 
 class Logo extends StatelessWidget {
   const Logo({super.key});
@@ -8,7 +8,7 @@ class Logo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text(
+        const Text(
           'MisliOS',
           style: TextStyle(fontSize: 22),
         ),

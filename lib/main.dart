@@ -1,31 +1,31 @@
-import 'package:beamer/beamer.dart';
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:misli_os_app/beam_nav/home_location.dart';
-import 'package:misli_os_app/firebase_options.dart';
+import 'package:misli_os_app/app/app_enviroment.dart';
+import 'package:misli_os_app/app/app_widget.dart';
+import 'package:misli_os_app/common/firebase_options.dart';
 
-void main(List<String> args) async {
+mainCommon(AppEnvironment environment) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  EnvInfo.initialize(environment);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  killAppWhenErrorInProduction();
   runApp(
     const ProviderScope(
-      child: MisliOsApp(),
+      child: AppWidget(),
     ),
   );
 }
 
-class MisliOsApp extends StatelessWidget {
-  const MisliOsApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routeInformationParser: BeamerParser(),
-      routerDelegate: BeamerDelegate(
-        locationBuilder: (routeInformation, beamParametetrs) => HomeLocation(),
-      ),
-    );
-  }
+void killAppWhenErrorInProduction() {
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    if (kReleaseMode) exit(1);
+  };
 }

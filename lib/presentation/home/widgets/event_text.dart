@@ -3,9 +3,9 @@ import 'package:html/dom.dart' as dom;
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:misli_os_app/domain/models/event_model.dart';
-import 'package:misli_os_app/presentation/common/text_styles.dart';
 import 'package:misli_os_app/presentation/common/util/custom_html_tags.dart';
 import 'package:misli_os_app/presentation/common/util/html_render_matcher.dart';
+import 'package:misli_os_app/presentation/common/values/text_styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class EventText extends StatelessWidget {

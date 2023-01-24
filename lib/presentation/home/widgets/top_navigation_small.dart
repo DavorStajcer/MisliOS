@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:misli_os_app/presentation/common/app_images.dart';
 import 'package:misli_os_app/presentation/home/widgets/logo.dart';
 
 class TopNavigationSmall extends StatelessWidget {
