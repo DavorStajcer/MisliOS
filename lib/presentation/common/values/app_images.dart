@@ -1,4 +1,5 @@
 abstract class AppImages {
-  static const String misliOsLogoPath = 'assets/png/misli_os_logo.jpeg';
+  static const String misliOsLogoPath = 'assets/png/logo_white.jpeg';
+  static const String misliOsStampPath = 'assets/png/logo_stamp.jpeg';
   static const String osijekPath = 'assets/png/osijek.jpeg';
 }

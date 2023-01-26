@@ -50,6 +50,7 @@ dependencies:
   http: ^0.13.5
   dotted_line: ^3.1.0
   firebase_storage: ^11.0.10
+  font_awesome_flutter: ^10.3.0
   
 dev_dependencies:
   flutter_test:

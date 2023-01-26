@@ -18,83 +18,85 @@ class ShowMoreEvents extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     bool shouldShow = ref.watch(showMoreEventsProvider);
-    return shouldShow
-        ? Column(
-            children: [
-              DottedLine(
-                lineThickness: 1,
-                dashLength: 4,
-                dashColor: Colors.blue.withOpacity(0.4),
-              ),
-              for (int i = 2; i < eventBodies.length; i++)
-                Column(
-                  children: [
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    Event(
-                      eventModel: eventBodies[i],
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    if (i < eventBodies.length - 1)
-                      DottedLine(
-                        lineThickness: 1,
-                        dashLength: 4,
-                        dashColor: Colors.blue.withOpacity(0.4),
-                      ),
-                  ],
-                )
-            ],
-          )
-        : Stack(
-            alignment: Alignment.topCenter,
-            children: [
-              Column(
-                children: [
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  const DottedLine(
-                    dashGapColor: Colors.blue,
-                    dashColor: Colors.blue,
-                    lineThickness: 1,
-                  ),
-                  const SizedBox(
-                    height: 0.5,
-                  ),
+    return Column(
+      children: [
+        if (shouldShow)
+          DottedLine(
+            lineThickness: 1,
+            dashLength: 4,
+            dashColor: Colors.blue.withOpacity(0.4),
+          ),
+        if (shouldShow)
+          for (int i = 2; i < eventBodies.length; i++)
+            Column(
+              children: [
+                const SizedBox(
+                  height: 40,
+                ),
+                Event(
+                  eventModel: eventBodies[i],
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                if (i < eventBodies.length - 1)
                   DottedLine(
                     lineThickness: 1,
                     dashLength: 4,
                     dashColor: Colors.blue.withOpacity(0.4),
                   ),
-                  const SizedBox(
-                    height: 100,
-                  )
-                ],
-              ),
-              Column(
-                children: [
-                  Container(
-                    color: Theme.of(context).scaffoldBackgroundColor,
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: GestureDetector(
-                      onTap: () => ref
-                          .read(showMoreEventsProvider.notifier)
-                          .state = true,
-                      child: HoverText(
-                        AppStrings.prikaziSveProjekte,
-                        style:
-                            AppTextStyles.normal.copyWith(color: Colors.blue),
-                        hoveredStyle:
-                            AppTextStyles.normal.copyWith(color: Colors.grey),
-                      ),
+              ],
+            ),
+        Stack(
+          alignment: Alignment.topCenter,
+          children: [
+            Column(
+              children: [
+                const SizedBox(
+                  height: 8,
+                ),
+                const DottedLine(
+                  dashGapColor: Colors.blue,
+                  dashColor: Colors.blue,
+                  lineThickness: 1,
+                ),
+                const SizedBox(
+                  height: 0.5,
+                ),
+                DottedLine(
+                  lineThickness: 1,
+                  dashLength: 4,
+                  dashColor: Colors.blue.withOpacity(0.4),
+                ),
+                const SizedBox(
+                  height: 100,
+                )
+              ],
+            ),
+            Column(
+              children: [
+                Container(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  child: GestureDetector(
+                    onTap: () => ref
+                        .read(showMoreEventsProvider.notifier)
+                        .state = !shouldShow,
+                    child: HoverText(
+                      shouldShow
+                          ? AppStrings.prikaziManje
+                          : AppStrings.prikaziSveProjekte,
+                      style: AppTextStyles.normal.copyWith(color: Colors.blue),
+                      hoveredStyle:
+                          AppTextStyles.normal.copyWith(color: Colors.grey),
                     ),
-                  )
-                ],
-              )
-            ],
-          );
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
+      ],
+    );
   }
 }

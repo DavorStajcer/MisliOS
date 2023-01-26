@@ -1,3 +1,3 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final tabIndexProvider = StateProvider<int>((_) => 2);
+final tabIndexProvider = StateProvider<int>((_) => 0);
