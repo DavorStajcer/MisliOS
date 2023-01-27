@@ -7,5 +7,5 @@ part 'stats_state.freezed.dart';
 class StatsState with _$StatsState {
   const factory StatsState.failure(String message) = _Failure;
   const factory StatsState.loading() = _Loading;
-  const factory StatsState.data(MisliOsStats tabs) = _Data;
+  const factory StatsState.data(List<MisliOsStat> tabs) = _Data;
 }

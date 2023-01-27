@@ -6,15 +6,13 @@ part of 'misli_os_stats.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MisliOsStats _$MisliOsStatsFromJson(Map<String, dynamic> json) => MisliOsStats(
-      projects: json['projects'] as int,
-      members: json['members'] as int,
-      honorableMembers: json['honorableMembers'] as int,
+MisliOsStat _$MisliOsStatFromJson(Map<String, dynamic> json) => MisliOsStat(
+      name: json['name'] as String,
+      count: json['count'] as int,
     );
 
-Map<String, dynamic> _$MisliOsStatsToJson(MisliOsStats instance) =>
+Map<String, dynamic> _$MisliOsStatToJson(MisliOsStat instance) =>
     <String, dynamic>{
-      'projects': instance.projects,
-      'members': instance.members,
-      'honorableMembers': instance.honorableMembers,
+      'name': instance.name,
+      'count': instance.count,
     };

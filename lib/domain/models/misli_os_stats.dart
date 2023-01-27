@@ -3,18 +3,16 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'misli_os_stats.g.dart';
 
 @JsonSerializable()
-class MisliOsStats {
-  final int projects;
-  final int members;
-  final int honorableMembers;
-  MisliOsStats({
-    required this.projects,
-    required this.members,
-    required this.honorableMembers,
+class MisliOsStat {
+  final String name;
+  final int count;
+  MisliOsStat({
+    required this.name,
+    required this.count,
   });
 
-  factory MisliOsStats.fromJson(Map<String, dynamic> json) =>
-      _$MisliOsStatsFromJson(json);
+  factory MisliOsStat.fromJson(Map<String, dynamic> json) =>
+      _$MisliOsStatFromJson(json);
 
-  Map<String, dynamic> toJson() => _$MisliOsStatsToJson(this);
+  Map<String, dynamic> toJson() => _$MisliOsStatToJson(this);
 }

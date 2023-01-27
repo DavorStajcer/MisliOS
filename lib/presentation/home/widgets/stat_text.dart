@@ -35,6 +35,12 @@ class _StatTextState extends State<StatText>
   }
 
   @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     int count = (_animation.value * widget.count).toInt();
     return Column(

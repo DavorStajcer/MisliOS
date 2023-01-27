@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'stats_state.dart';
+part of 'main_image_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,26 +15,26 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$StatsState {
+mixin _$MainImageState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
     required TResult Function() loading,
-    required TResult Function(List<MisliOsStat> tabs) data,
+    required TResult Function(String imageUrl) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<MisliOsStat> tabs)? data,
+    TResult Function(String imageUrl)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<MisliOsStat> tabs)? data,
+    TResult Function(String imageUrl)? data,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,19 +63,20 @@ mixin _$StatsState {
 }
 
 /// @nodoc
-abstract class $StatsStateCopyWith<$Res> {
-  factory $StatsStateCopyWith(
-          StatsState value, $Res Function(StatsState) then) =
-      _$StatsStateCopyWithImpl<$Res>;
+abstract class $MainImageStateCopyWith<$Res> {
+  factory $MainImageStateCopyWith(
+          MainImageState value, $Res Function(MainImageState) then) =
+      _$MainImageStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$StatsStateCopyWithImpl<$Res> implements $StatsStateCopyWith<$Res> {
-  _$StatsStateCopyWithImpl(this._value, this._then);
+class _$MainImageStateCopyWithImpl<$Res>
+    implements $MainImageStateCopyWith<$Res> {
+  _$MainImageStateCopyWithImpl(this._value, this._then);
 
-  final StatsState _value;
+  final MainImageState _value;
   // ignore: unused_field
-  final $Res Function(StatsState) _then;
+  final $Res Function(MainImageState) _then;
 }
 
 /// @nodoc
@@ -87,7 +88,7 @@ abstract class _$$_FailureCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_FailureCopyWithImpl<$Res> extends _$StatsStateCopyWithImpl<$Res>
+class __$$_FailureCopyWithImpl<$Res> extends _$MainImageStateCopyWithImpl<$Res>
     implements _$$_FailureCopyWith<$Res> {
   __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
       : super(_value, (v) => _then(v as _$_Failure));
@@ -118,7 +119,7 @@ class _$_Failure implements _Failure {
 
   @override
   String toString() {
-    return 'StatsState.failure(message: $message)';
+    return 'MainImageState.failure(message: $message)';
   }
 
   @override
@@ -143,7 +144,7 @@ class _$_Failure implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
     required TResult Function() loading,
-    required TResult Function(List<MisliOsStat> tabs) data,
+    required TResult Function(String imageUrl) data,
   }) {
     return failure(message);
   }
@@ -153,7 +154,7 @@ class _$_Failure implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<MisliOsStat> tabs)? data,
+    TResult Function(String imageUrl)? data,
   }) {
     return failure?.call(message);
   }
@@ -163,7 +164,7 @@ class _$_Failure implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<MisliOsStat> tabs)? data,
+    TResult Function(String imageUrl)? data,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -207,7 +208,7 @@ class _$_Failure implements _Failure {
   }
 }
 
-abstract class _Failure implements StatsState {
+abstract class _Failure implements MainImageState {
   const factory _Failure(final String message) = _$_Failure;
 
   String get message;
@@ -224,7 +225,7 @@ abstract class _$$_LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res> extends _$StatsStateCopyWithImpl<$Res>
+class __$$_LoadingCopyWithImpl<$Res> extends _$MainImageStateCopyWithImpl<$Res>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, (v) => _then(v as _$_Loading));
@@ -240,7 +241,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'StatsState.loading()';
+    return 'MainImageState.loading()';
   }
 
   @override
@@ -257,7 +258,7 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
     required TResult Function() loading,
-    required TResult Function(List<MisliOsStat> tabs) data,
+    required TResult Function(String imageUrl) data,
   }) {
     return loading();
   }
@@ -267,7 +268,7 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<MisliOsStat> tabs)? data,
+    TResult Function(String imageUrl)? data,
   }) {
     return loading?.call();
   }
@@ -277,7 +278,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<MisliOsStat> tabs)? data,
+    TResult Function(String imageUrl)? data,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -321,7 +322,7 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements StatsState {
+abstract class _Loading implements MainImageState {
   const factory _Loading() = _$_Loading;
 }
 
@@ -329,11 +330,11 @@ abstract class _Loading implements StatsState {
 abstract class _$$_DataCopyWith<$Res> {
   factory _$$_DataCopyWith(_$_Data value, $Res Function(_$_Data) then) =
       __$$_DataCopyWithImpl<$Res>;
-  $Res call({List<MisliOsStat> tabs});
+  $Res call({String imageUrl});
 }
 
 /// @nodoc
-class __$$_DataCopyWithImpl<$Res> extends _$StatsStateCopyWithImpl<$Res>
+class __$$_DataCopyWithImpl<$Res> extends _$MainImageStateCopyWithImpl<$Res>
     implements _$$_DataCopyWith<$Res> {
   __$$_DataCopyWithImpl(_$_Data _value, $Res Function(_$_Data) _then)
       : super(_value, (v) => _then(v as _$_Data));
@@ -343,13 +344,13 @@ class __$$_DataCopyWithImpl<$Res> extends _$StatsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? tabs = freezed,
+    Object? imageUrl = freezed,
   }) {
     return _then(_$_Data(
-      tabs == freezed
-          ? _value._tabs
-          : tabs // ignore: cast_nullable_to_non_nullable
-              as List<MisliOsStat>,
+      imageUrl == freezed
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -357,18 +358,14 @@ class __$$_DataCopyWithImpl<$Res> extends _$StatsStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Data implements _Data {
-  const _$_Data(final List<MisliOsStat> tabs) : _tabs = tabs;
+  const _$_Data(this.imageUrl);
 
-  final List<MisliOsStat> _tabs;
   @override
-  List<MisliOsStat> get tabs {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_tabs);
-  }
+  final String imageUrl;
 
   @override
   String toString() {
-    return 'StatsState.data(tabs: $tabs)';
+    return 'MainImageState.data(imageUrl: $imageUrl)';
   }
 
   @override
@@ -376,12 +373,12 @@ class _$_Data implements _Data {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Data &&
-            const DeepCollectionEquality().equals(other._tabs, _tabs));
+            const DeepCollectionEquality().equals(other.imageUrl, imageUrl));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_tabs));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(imageUrl));
 
   @JsonKey(ignore: true)
   @override
@@ -393,9 +390,9 @@ class _$_Data implements _Data {
   TResult when<TResult extends Object?>({
     required TResult Function(String message) failure,
     required TResult Function() loading,
-    required TResult Function(List<MisliOsStat> tabs) data,
+    required TResult Function(String imageUrl) data,
   }) {
-    return data(tabs);
+    return data(imageUrl);
   }
 
   @override
@@ -403,9 +400,9 @@ class _$_Data implements _Data {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<MisliOsStat> tabs)? data,
+    TResult Function(String imageUrl)? data,
   }) {
-    return data?.call(tabs);
+    return data?.call(imageUrl);
   }
 
   @override
@@ -413,11 +410,11 @@ class _$_Data implements _Data {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String message)? failure,
     TResult Function()? loading,
-    TResult Function(List<MisliOsStat> tabs)? data,
+    TResult Function(String imageUrl)? data,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(tabs);
+      return data(imageUrl);
     }
     return orElse();
   }
@@ -457,10 +454,10 @@ class _$_Data implements _Data {
   }
 }
 
-abstract class _Data implements StatsState {
-  const factory _Data(final List<MisliOsStat> tabs) = _$_Data;
+abstract class _Data implements MainImageState {
+  const factory _Data(final String imageUrl) = _$_Data;
 
-  List<MisliOsStat> get tabs;
+  String get imageUrl;
   @JsonKey(ignore: true)
   _$$_DataCopyWith<_$_Data> get copyWith => throw _privateConstructorUsedError;
 }

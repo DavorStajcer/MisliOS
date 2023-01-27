@@ -1,18 +1,16 @@
-import 'dart:developer';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/common/exception.dart';
-import 'package:misli_os_app/data/repository/stats_repository.dart';
+import 'package:misli_os_app/data/repository/general_info_repository.dart';
 import 'package:misli_os_app/domain/interactors/stats_provider/stats_state.dart';
 
 final statsNotifierProvider =
     StateNotifierProvider<StasNotifier, StatsState>((ref) {
-  final statsRepo = ref.read(statsRepositoryProvider);
-  return StasNotifier(statsRepo)..fetchStats();
+  final generalRepo = ref.read(generalRepositoryProvider);
+  return StasNotifier(generalRepo)..fetchStats();
 });
 
 class StasNotifier extends StateNotifier<StatsState> {
-  final StatsRepository _statsRepository;
+  final GeneralInfoRepository _statsRepository;
   StasNotifier(this._statsRepository) : super(const StatsState.loading());
 
   Future<void> fetchStats() async {

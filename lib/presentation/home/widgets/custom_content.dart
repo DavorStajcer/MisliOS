@@ -1,87 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
-import 'package:misli_os_app/presentation/common/util/custom_html_tags.dart';
-import 'package:misli_os_app/presentation/common/util/html_render_matcher.dart';
-import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
-import 'package:misli_os_app/presentation/home/widgets/go_to_top.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:misli_os_app/domain/interactors/window_size_provider/window_size_provider.dart';
+import 'package:misli_os_app/presentation/home/widgets/custom_content_full.dart';
+import 'package:misli_os_app/presentation/home/widgets/custom_content_medium.dart';
 
-class CustomContent extends StatelessWidget {
+class CustomContent extends ConsumerWidget {
   final String body;
   const CustomContent(
     this.body, {
     super.key,
   });
-
-  /*  Future<String> readTestHtml() async {
-    try {
-      String html = await rootBundle.loadString('files/test_html.html');
-      log('read file $html');
-      return html;
-    } catch (e) {
-      log('Error: ${e.toString()}');
-      return '<p>Not able to read html test file</p>';
-    }
-  }
- */
   @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 100),
-          child: Html(
-            data: body,
-            tagsList: Html.tags..addAll(CustomHtmlTags.allCustomTags),
-            customRenders: {
-              HtmlRenderMatcher.tagName(CustomHtmlTags.middle):
-                  CustomRender.widget(widget: (renderContext, buildChildren) {
-                String text =
-                    renderContext.tree.element!.attributes['text'] ?? '';
-                bool underlined =
-                    renderContext.tree.element!.attributes['underlined'] !=
-                        null;
-                bool highlight =
-                    renderContext.tree.element!.attributes['highlight'] != null;
-
-                return Container(
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  child: Text(
-                    text,
-                    style: AppTextStyles.eventTitle.copyWith(
-                      decoration: underlined ? TextDecoration.underline : null,
-                      color: highlight ? Colors.lightBlue : null,
-                    ),
-                  ),
-                );
-              }),
-              HtmlRenderMatcher.tagName(CustomHtmlTags.customImage):
-                  CustomRender.widget(widget: (renderContext, buildChildren) {
-                String? imageUrl =
-                    renderContext.tree.element?.attributes['imageurl'];
-                return imageUrl != null
-                    ? Container(
-                        width: double.infinity,
-                        height: 350,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(24)),
-                          image: DecorationImage(
-                            image: NetworkImage(
-                              imageUrl,
-                            ),
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                      )
-                    : const SizedBox();
-              }),
-            },
-          ),
-        ),
-        const GoToTop(),
-      ],
+  Widget build(BuildContext context, WidgetRef ref) {
+    final windowSizeState = ref.watch(windowSizeProvider);
+    return windowSizeState.when(
+      full: (Size size) => CustomContentFull(body),
+      medium: (Size size) => CustomContentMedium(body),
+      small: (Size size) => CustomContentMedium(body),
+      undefined: () => const SizedBox(),
     );
   }
 }

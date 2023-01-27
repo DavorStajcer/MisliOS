@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:misli_os_app/domain/interactors/window_size_provider/window_size_provider.dart';
 import 'package:misli_os_app/domain/models/event_model.dart';
-import 'package:misli_os_app/presentation/home/widgets/event_text.dart';
+import 'package:misli_os_app/presentation/home/widgets/event_full.dart';
+import 'package:misli_os_app/presentation/home/widgets/event_small.dart';
 
-class Event extends StatelessWidget {
+class Event extends ConsumerWidget {
   final EventModel eventModel;
   const Event({
     super.key,
@@ -10,34 +13,19 @@ class Event extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          height: 350,
-          width: 300,
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(Radius.circular(24)),
-            image: DecorationImage(
-              image: NetworkImage(
-                eventModel.imageUrl,
-              ),
-              fit: BoxFit.fitHeight,
-            ),
-          ),
-        ),
-        const SizedBox(
-          width: 50,
-        ),
-        Expanded(
-          child: SizedBox(
-            height: 350,
-            child: EventText(
-              eventModel: eventModel,
-            ),
-          ),
-        )
-      ],
+  Widget build(BuildContext context, WidgetRef ref) {
+    final windowSizeState = ref.watch(windowSizeProvider);
+    return windowSizeState.when(
+      full: (Size size) => EventFull(
+        eventModel: eventModel,
+      ),
+      medium: (Size size) => EventFull(
+        eventModel: eventModel,
+      ),
+      small: (Size size) => EventSmall(
+        eventModel: eventModel,
+      ),
+      undefined: () => const SizedBox(),
     );
   }
 }

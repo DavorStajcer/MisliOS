@@ -7,12 +7,15 @@ class TopNavigationSmall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: const [
-        SizedBox(width: 20),
-        Logo(),
-        Expanded(child: SizedBox()),
-        Icon(Icons.menu),
-        SizedBox(width: 20),
+      children: [
+        const SizedBox(width: 20),
+        const Logo(),
+        const Expanded(child: SizedBox()),
+        GestureDetector(
+          onTap: () => Scaffold.of(context).openDrawer(),
+          child: const Icon(Icons.menu),
+        ),
+        const SizedBox(width: 20),
       ],
     );
   }

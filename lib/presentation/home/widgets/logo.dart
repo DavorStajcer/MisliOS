@@ -13,7 +13,7 @@ class Logo extends StatelessWidget {
           AppStrings.misliOs,
           style: TextStyle(fontSize: 22),
         ),
-        Image.asset(AppImages.misliOsLogoPath),
+        Image.asset(AppImages.misliOsLogoBluePath),
       ],
     );
   }

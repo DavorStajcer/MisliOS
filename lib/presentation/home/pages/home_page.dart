@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/providers/home_page_loading_provider/home_page_loading_provider.dart';
@@ -13,6 +15,7 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final homePageLoadingState = ref.watch(homePageLoadingProvider);
+    log('building homePageLoadingState $homePageLoadingState');
     return SingleChildScrollView(
       controller: ref.read(pageScrollControllerProvider),
       child: homePageLoadingState.when(
@@ -21,10 +24,14 @@ class HomePage extends ConsumerWidget {
           child: CircularProgressIndicator(),
         ),
         allDataFetched: () => Column(
-          children: const [
-            TopNavigation(),
-            PageContent(),
-            Footer(),
+          children: [
+            const TopNavigation(),
+            Container(
+              constraints: BoxConstraints(
+                  minHeight: MediaQuery.of(context).size.height * 1 - 250),
+              child: const PageContent(),
+            ),
+            const Footer(),
           ],
         ),
       ),
