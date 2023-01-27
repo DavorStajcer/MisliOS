@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:misli_os_app/presentation/common/values/app_images.dart';
 import 'package:misli_os_app/presentation/common/values/app_strings.dart';
+import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 
 class Logo extends StatelessWidget {
   const Logo({super.key});
@@ -9,11 +10,17 @@ class Logo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Text(
+        Text(
           AppStrings.misliOs,
-          style: TextStyle(fontSize: 22),
+          style: AppTextStyles.tabText.copyWith(fontWeight: FontWeight.bold),
         ),
-        Image.asset(AppImages.misliOsLogoBluePath),
+        const SizedBox(
+          width: 20,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Image.asset(AppImages.misliOsLogoBluePath),
+        ),
       ],
     );
   }
