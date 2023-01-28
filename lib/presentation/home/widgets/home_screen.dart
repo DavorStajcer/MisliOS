@@ -5,7 +5,8 @@ import 'package:misli_os_app/presentation/home/pages/home_page.dart';
 import 'package:misli_os_app/presentation/home/widgets/home_drawer.dart';
 
 class HomeScreen extends ConsumerWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final Widget child;
+  const HomeScreen(this.child, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,7 +23,7 @@ class HomeScreen extends ConsumerWidget {
                 .read(windowSizeProvider.notifier)
                 .onWidnowSizeChanged(screenSize);
           });
-          return const HomePage();
+          return HomePage(child);
         },
       ),
     );

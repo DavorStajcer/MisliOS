@@ -1,12 +1,11 @@
-import 'package:html/dom.dart' as dom;
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:misli_os_app/domain/models/event_model.dart';
 import 'package:misli_os_app/presentation/common/util/custom_html_tags.dart';
+import 'package:misli_os_app/presentation/common/util/html_redirect.dart';
 import 'package:misli_os_app/presentation/common/util/html_render_matcher.dart';
 import 'package:misli_os_app/presentation/common/values/app_strings.dart';
 import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class EventText extends StatelessWidget {
   final EventModel eventModel;
@@ -26,23 +25,12 @@ class EventText extends StatelessWidget {
     }
   } */
 
-  void _onHtmlLinkTap(String? url, RenderContext renderContexct,
-      Map<String, String> attributes, dom.Element? element) {
-    if (url == null) {
-      return;
-    }
-    final Uri? uri = Uri.tryParse(url);
-    if (uri != null) {
-      launchUrl(uri);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Html(
       tagsList: Html.tags..addAll(CustomHtmlTags.allCustomTags),
       data: eventModel.body,
-      onLinkTap: _onHtmlLinkTap,
+      onLinkTap: HtmlRedirect.onHtmlLinkTap,
       style: {
         'p': Style(
           margin: Margins.zero,

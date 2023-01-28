@@ -6,11 +6,15 @@ import 'package:misli_os_app/domain/providers/home_page_loading_provider/home_pa
 import 'package:misli_os_app/domain/providers/page_scroll_controller_provider/page_scroll_conroller_probider.dart';
 import 'package:misli_os_app/presentation/home/widgets/footer.dart';
 import 'package:misli_os_app/presentation/home/widgets/home_page_reload.dart';
-import 'package:misli_os_app/presentation/home/widgets/page_content.dart';
 import 'package:misli_os_app/presentation/home/widgets/top_navigation.dart';
 
 class HomePage extends ConsumerWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final Widget child;
+
+  const HomePage(
+    this.child, {
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -28,8 +32,10 @@ class HomePage extends ConsumerWidget {
             const TopNavigation(),
             Container(
               constraints: BoxConstraints(
-                  minHeight: MediaQuery.of(context).size.height * 1 - 250),
-              child: const PageContent(),
+                minHeight: MediaQuery.of(context).size.height - 250,
+                maxHeight: 1800,
+              ),
+              child: child,
             ),
             const Footer(),
           ],

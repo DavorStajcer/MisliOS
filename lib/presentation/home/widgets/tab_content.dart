@@ -5,8 +5,8 @@ import 'package:misli_os_app/domain/providers/tab_picked_provider/tab_picked_pro
 import 'package:misli_os_app/presentation/home/widgets/custom_content.dart';
 import 'package:misli_os_app/presentation/home/widgets/naslovnica.dart';
 
-class PageContent extends ConsumerWidget {
-  const PageContent({
+class TabContent extends ConsumerWidget {
+  const TabContent({
     super.key,
   });
 

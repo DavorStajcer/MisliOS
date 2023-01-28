@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:misli_os_app/domain/models/event_model.dart';
 import 'package:misli_os_app/presentation/home/widgets/event_text.dart';
 
@@ -13,16 +14,19 @@ class EventSmall extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          height: 350,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(Radius.circular(24)),
-            image: DecorationImage(
-              image: NetworkImage(
-                eventModel.imageUrl,
+        GestureDetector(
+          onTap: () => GoRouter.of(context).go('event/${eventModel.id}'),
+          child: Container(
+            height: 350,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(24)),
+              image: DecorationImage(
+                image: NetworkImage(
+                  eventModel.imageUrl,
+                ),
+                fit: BoxFit.fitHeight,
               ),
-              fit: BoxFit.fitHeight,
             ),
           ),
         ),
