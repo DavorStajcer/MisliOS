@@ -7,7 +7,7 @@ final tabPickedProvider = StateProvider<HomeTab?>((ref) {
   final tabState = ref.watch(tabsNotifierProbider);
   final pickedTabIndex = ref.watch(tabIndexProvider);
   return tabState.maybeWhen<HomeTab?>(
-    data: (tabs) => tabs[pickedTabIndex],
+    data: (tabs) => pickedTabIndex == null ? null : tabs[pickedTabIndex],
     orElse: () => null,
   );
 });

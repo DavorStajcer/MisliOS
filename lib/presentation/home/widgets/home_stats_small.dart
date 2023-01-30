@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/providers/small_stats_provider/small_stats_provider.dart';
@@ -11,7 +9,6 @@ class HomeStatsSmall extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final statsGroupsOfTwo = ref.watch(smallStatsProvider);
-    log('smallstats: building ${statsGroupsOfTwo.map((e) => e.map((e) => e.name))} ');
 
     return Container(
       color: Colors.blue,

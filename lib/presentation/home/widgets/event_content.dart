@@ -11,10 +11,6 @@ class EventContent extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final eventState = ref.watch(eventNotifierProvider(eventId));
-    /*    return SizedBox(
-      height: 300,
-      child: Text('event details, eventId ${widget.eventId}'),
-    ); */
     return eventState.when(
       failure: (errorMessage) => HomePageReload(errorMessage),
       loading: () => const Center(

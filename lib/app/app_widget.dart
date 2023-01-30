@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:misli_os_app/presentation/home/widgets/event_content.dart';
 import 'package:misli_os_app/presentation/home/widgets/home_screen.dart';
-import 'package:misli_os_app/presentation/home/widgets/tab_content.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -13,23 +11,36 @@ final _router = GoRouter(
   navigatorKey: _rootNavigatorKey,
   initialLocation: '/',
   routes: [
-    ShellRoute(
-      navigatorKey: shellNavigatorKey,
-      builder: (context, state, child) => HomeScreen(child),
-      routes: [
-        GoRoute(
-          path: '/',
-          builder: (context, state) => const TabContent(),
-        ),
-        GoRoute(
-          path: '/event/:eventId',
-          builder: (context, state) {
-            final String eventId = state.params['eventId'] ?? '';
-            return EventContent(eventId);
-          },
-        )
-      ],
+    GoRoute(
+      path: '/',
+      redirect: (context, state) => '/tabs/0',
     ),
+    GoRoute(
+      path: '/tabs/:tabId',
+      pageBuilder: (context, state) {
+        return NoTransitionPage(
+          child: HomeScreen(
+            key: state.pageKey,
+          ),
+        );
+      },
+    ),
+    GoRoute(
+      path: '/event/:eventId',
+      pageBuilder: (context, state) {
+        final String eventId = state.params['eventId'] ?? '';
+        return NoTransitionPage(
+          child: HomeScreen(
+            key: state.pageKey,
+            eventId: eventId,
+          ),
+        );
+      },
+      /*        pageBuilder: (context, state) {
+            final String eventId = state.params['eventId'] ?? '';
+            return NoTransitionPage(child: );
+          }, */
+    )
   ],
 );
 

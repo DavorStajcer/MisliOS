@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/interactors/stats_provider/stats_provider.dart';
@@ -11,7 +9,6 @@ class HomeStatsFull extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final statsState = ref.read(statsNotifierProvider);
-    log('building stats $statsState');
 
     return statsState.maybeWhen(
       data: (stats) => Container(

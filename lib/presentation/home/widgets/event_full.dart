@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/models/event_model.dart';
 import 'package:misli_os_app/presentation/home/widgets/event_text.dart';
 
-class EventFull extends StatelessWidget {
+class EventFull extends ConsumerWidget {
   final EventModel eventModel;
   const EventFull({
     super.key,
@@ -11,22 +11,19 @@ class EventFull extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Row(
       children: [
-        GestureDetector(
-          onTap: () => GoRouter.of(context).go('/event/${eventModel.id}'),
-          child: Container(
-            height: 350,
-            width: 300,
-            decoration: BoxDecoration(
-              borderRadius: const BorderRadius.all(Radius.circular(24)),
-              image: DecorationImage(
-                image: NetworkImage(
-                  eventModel.imageUrl,
-                ),
-                fit: BoxFit.fitHeight,
+        Container(
+          height: 350,
+          width: 300,
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(24)),
+            image: DecorationImage(
+              image: NetworkImage(
+                eventModel.imageUrl,
               ),
+              fit: BoxFit.fitHeight,
             ),
           ),
         ),

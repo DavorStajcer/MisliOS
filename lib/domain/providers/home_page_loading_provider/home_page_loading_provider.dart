@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/interactors/events_provider/events_provider.dart';
 import 'package:misli_os_app/domain/interactors/main_image_provider/main_image_provider.dart';
@@ -12,13 +10,6 @@ final homePageLoadingProvider = StateProvider<HomePageLoadingState>((ref) {
   final statsState = ref.watch(statsNotifierProvider);
   final mainImageState = ref.watch(mainImageProvider);
   final eventsState = ref.watch(eventsNotifierProvider);
-
-  log('---------');
-  log(tabsState.toString());
-  log(statsState.toString());
-  log(eventsState.toString());
-  log(mainImageState.toString());
-  log('---------');
 
   final tabsFailure = tabsState.whenOrNull(
     failure: (message) => HomePageLoadingState.failure(message),

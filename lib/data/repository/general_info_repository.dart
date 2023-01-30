@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/common/exception.dart';
@@ -26,8 +24,6 @@ class GeneralInfoRepositoryImpl extends GeneralInfoRepository {
       throw NoInternetException('No internet connection');
     }
     try {
-      log('statsstuff: getting stats..');
-
       final querySnapshot = await FirebaseFirestore.instance
           .collection('general')
           .doc('stats')
@@ -40,11 +36,8 @@ class GeneralInfoRepositoryImpl extends GeneralInfoRepository {
         final stat = MisliOsStat.fromJson(data);
         stats.add(stat);
       }
-      log('statsstuff: got stats $stats');
       return stats;
     } catch (e) {
-      log('statsstuff: error getting stats $e');
-
       throw ServerException('Could not fetch data from server. Try again.');
     }
   }
@@ -56,8 +49,6 @@ class GeneralInfoRepositoryImpl extends GeneralInfoRepository {
       throw NoInternetException('No internet connection');
     }
     try {
-      log('statsstuff: getting stats..');
-
       final docSnpashot = await FirebaseFirestore.instance
           .collection('general')
           .doc('home_page_picture')
@@ -67,11 +58,8 @@ class GeneralInfoRepositoryImpl extends GeneralInfoRepository {
       if (imageUrl == null) {
         throw ServerException('Could not fetch data from server. Try again.');
       }
-      log('statsstuff: got imageUrl $imageUrl');
       return imageUrl;
     } catch (e) {
-      log('statsstuff: error getting stats $e');
-
       throw ServerException('Could not fetch data from server. Try again.');
     }
   }
