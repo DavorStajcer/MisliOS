@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/interactors/window_size_provider/window_size_provider.dart';
+import 'package:misli_os_app/presentation/common/values/app_colors.dart';
 import 'package:misli_os_app/presentation/home/pages/home_page.dart';
 import 'package:misli_os_app/presentation/home/widgets/home_drawer.dart';
 
@@ -37,6 +38,7 @@ class _HomState extends ConsumerState<HomeScreen> {
     );
 
     return Scaffold(
+      backgroundColor: AppColors.primary,
       drawer: hasDrawer ? const HomeDrawer() : null,
       body: LayoutBuilder(
         builder: (context, constraints) {

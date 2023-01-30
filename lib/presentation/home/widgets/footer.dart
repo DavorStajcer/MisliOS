@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:misli_os_app/presentation/common/util/html_redirect.dart';
+import 'package:misli_os_app/presentation/common/values/app_colors.dart';
 import 'package:misli_os_app/presentation/common/values/app_images.dart';
 import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 import 'package:misli_os_app/presentation/common/widgets/hover_icon.dart';
@@ -13,7 +14,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blue,
+      color: AppColors.secondary,
       height: 150,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

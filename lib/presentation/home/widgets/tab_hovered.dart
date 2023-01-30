@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:misli_os_app/domain/models/home_tab.dart';
+import 'package:misli_os_app/presentation/common/values/app_colors.dart';
 import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 
 class TabHovered extends StatelessWidget {
@@ -18,11 +19,11 @@ class TabHovered extends StatelessWidget {
         horizontal: 10,
         vertical: 2,
       ),
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
             width: 4,
-            color: Colors.blue,
+            color: AppColors.secondary,
           ),
         ),
       ),

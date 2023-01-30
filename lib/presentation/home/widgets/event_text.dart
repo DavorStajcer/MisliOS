@@ -4,6 +4,7 @@ import 'package:misli_os_app/domain/models/event_model.dart';
 import 'package:misli_os_app/presentation/common/util/custom_html_tags.dart';
 import 'package:misli_os_app/presentation/common/util/html_redirect.dart';
 import 'package:misli_os_app/presentation/common/util/html_render_matcher.dart';
+import 'package:misli_os_app/presentation/common/values/app_fonts.dart';
 import 'package:misli_os_app/presentation/common/values/app_strings.dart';
 import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 
@@ -34,6 +35,8 @@ class EventText extends StatelessWidget {
       style: {
         'p': Style(
           margin: Margins.zero,
+          fontFamily: AppFonts.delaGothicOneRegular,
+          color: Colors.white,
         )
       },
       customRenders: {

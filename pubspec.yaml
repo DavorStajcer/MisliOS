@@ -52,6 +52,7 @@ dependencies:
   firebase_storage: ^11.0.10
   font_awesome_flutter: ^10.3.0
   go_router: ^6.0.1
+  flutter_svg: ^1.1.6
   
 dev_dependencies:
   flutter_test:
@@ -81,6 +82,30 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/png/
+    - assets/svg/
+    - assets/fonts/
+
+  fonts:
+    - family: DelaGothicOne
+      fonts:
+        - asset: assets/fonts/DelaGothicOne-Regular.ttf
+    - family: Smack Boom
+      fonts:
+        - asset: assets/fonts/Smack Boom.ttf
+    - family: KGLegoHouse #maybe
+      fonts:
+        - asset: assets/fonts/KGLegoHouse.ttf
+    - family: KGSecondChancesSolid #mmkey
+      fonts:
+        - asset: assets/fonts/KGSecondChancesSolid.ttf
+    - family: KGSummerSunshineShadow #font za logo
+      fonts:
+        - asset: assets/fonts/KGSummerSunshineShadow.ttf
+    - family: Tisa Sans Pro Medium #font za logo
+      fonts:
+        - asset: assets/fonts/Tisa Sans Pro Medium.ttf
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

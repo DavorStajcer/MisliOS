@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/interactors/stats_provider/stats_provider.dart';
+import 'package:misli_os_app/presentation/common/values/app_colors.dart';
 import 'package:misli_os_app/presentation/home/widgets/stat_text.dart';
 
 class HomeStatsFull extends ConsumerWidget {
@@ -12,7 +13,7 @@ class HomeStatsFull extends ConsumerWidget {
 
     return statsState.maybeWhen(
       data: (stats) => Container(
-        color: Colors.blue,
+        color: AppColors.secondary,
         height: 150,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

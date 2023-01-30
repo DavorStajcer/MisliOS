@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:misli_os_app/domain/interactors/window_size_provider/window_size_provider.dart';
 import 'package:misli_os_app/domain/models/event_model.dart';
 import 'package:misli_os_app/domain/providers/tab_picked_provider/tab_index_provider.dart';
+import 'package:misli_os_app/presentation/common/values/app_colors.dart';
 import 'package:misli_os_app/presentation/common/widgets/hover_container.dart';
 import 'package:misli_os_app/presentation/home/widgets/event_full.dart';
 import 'package:misli_os_app/presentation/home/widgets/event_small.dart';
@@ -25,6 +26,7 @@ class Event extends ConsumerWidget {
       },
       child: HoverContainer(
         hoveredDecoration: BoxDecoration(
+          color: AppColors.eventBackground.withOpacity(0.85),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.1),
@@ -34,6 +36,8 @@ class Event extends ConsumerWidget {
             )
           ],
         ),
+        decoration:
+            BoxDecoration(color: AppColors.eventBackground.withOpacity(0.65)),
         child: windowSizeState.when(
           full: (Size size) => EventFull(
             eventModel: eventModel,
