@@ -46,9 +46,9 @@ class Footer extends StatelessWidget {
           const SizedBox(height: 20),
           GestureDetector(
             onTap: () => HtmlRedirect.redirectoToUrl(
-                'mailto:${'udrugamislios@gmail.com'}'),
+                'mailto:${'udruga.mislios@gmail.com'}'),
             child: HoverText(
-              'udrugamislios@gmail.com',
+              'udruga.mislios@gmail.com',
               style: AppTextStyles.normal.copyWith(color: AppColors.secondary),
               hoveredStyle:
                   AppTextStyles.normal.copyWith(color: AppColors.ternary),
