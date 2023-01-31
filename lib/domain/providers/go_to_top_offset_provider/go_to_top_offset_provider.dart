@@ -32,6 +32,9 @@ class GoToTopOffsetNotifier extends StateNotifier<double> {
       state = initialHeight;
       return;
     }
-    state = initialHeight + (_pageScrollController.offset - 150);
+    if (_pageScrollController.offset > 250) {
+      return state;
+    }
+    state = initialHeight - (_pageScrollController.offset - 150);
   }
 }

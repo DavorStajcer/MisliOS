@@ -21,7 +21,7 @@ class EventFull extends ConsumerWidget {
             borderRadius: const BorderRadius.all(Radius.circular(24)),
             image: DecorationImage(
               image: NetworkImage(
-                eventModel.imageUrl,
+                eventModel.previewImageUrl,
               ),
               fit: BoxFit.fitHeight,
             ),

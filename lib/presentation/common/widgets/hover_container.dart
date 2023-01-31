@@ -25,7 +25,7 @@ class _HoverTextState extends State<HoverContainer> {
 
   @override
   Widget build(BuildContext context) {
-    if (!kIsWebMobile) {
+    if (kIsWebMobile) {
       return widget.child;
     }
     return MouseRegion(

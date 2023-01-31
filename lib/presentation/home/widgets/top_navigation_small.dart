@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:misli_os_app/presentation/common/values/app_colors.dart';
 import 'package:misli_os_app/presentation/home/widgets/logo.dart';
 
 class TopNavigationSmall extends StatelessWidget {
@@ -13,7 +14,10 @@ class TopNavigationSmall extends StatelessWidget {
         const Expanded(child: SizedBox()),
         GestureDetector(
           onTap: () => Scaffold.of(context).openDrawer(),
-          child: const Icon(Icons.menu),
+          child: Icon(
+            Icons.menu,
+            color: AppColors.secondary,
+          ),
         ),
         const SizedBox(width: 20),
       ],

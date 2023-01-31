@@ -16,7 +16,7 @@ class EventContent extends ConsumerWidget {
       loading: () => const Center(
         child: CircularProgressIndicator(),
       ),
-      data: (event) => CustomContent(event.body),
+      data: (event) => CustomContent(event.html),
     );
   }
 }

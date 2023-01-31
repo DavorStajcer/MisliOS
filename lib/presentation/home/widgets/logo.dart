@@ -14,6 +14,7 @@ class Logo extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Container(
           padding: const EdgeInsets.symmetric(vertical: 10),

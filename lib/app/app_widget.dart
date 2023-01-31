@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:misli_os_app/presentation/home/widgets/home_screen.dart';
@@ -18,9 +20,12 @@ final _router = GoRouter(
     GoRoute(
       path: '/tabs/:tabId',
       pageBuilder: (context, state) {
+        final String tabId = state.params['tabId'] ?? '';
+        log('tabnavigationstuff: pageBuilder, tabId $tabId');
         return NoTransitionPage(
           child: HomeScreen(
-            key: state.pageKey,
+            key: Key(tabId),
+            tabId: int.tryParse(tabId),
           ),
         );
       },
@@ -31,7 +36,7 @@ final _router = GoRouter(
         final String eventId = state.params['eventId'] ?? '';
         return NoTransitionPage(
           child: HomeScreen(
-            key: state.pageKey,
+            key: Key(eventId),
             eventId: eventId,
           ),
         );

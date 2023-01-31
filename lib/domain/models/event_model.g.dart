@@ -8,15 +8,17 @@ part of 'event_model.dart';
 
 EventModel _$EventModelFromJson(Map<String, dynamic> json) => EventModel(
       id: json['id'] as String,
-      body: json['body'] as String,
+      previewHtml: json['previewHtml'] as String,
       dateCreated: DateTime.parse(json['dateCreated'] as String),
-      imageUrl: json['imageUrl'] as String,
+      previewImageUrl: json['previewImageUrl'] as String,
+      html: json['html'] as String,
     );
 
 Map<String, dynamic> _$EventModelToJson(EventModel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'body': instance.body,
+      'previewHtml': instance.previewHtml,
       'dateCreated': instance.dateCreated.toIso8601String(),
-      'imageUrl': instance.imageUrl,
+      'previewImageUrl': instance.previewImageUrl,
+      'html': instance.html,
     };

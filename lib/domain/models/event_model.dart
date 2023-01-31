@@ -5,21 +5,24 @@ part 'event_model.g.dart';
 @JsonSerializable()
 class EventModel {
   final String id;
-  final String body;
+  final String previewHtml;
   final DateTime dateCreated;
-  final String imageUrl;
+  final String previewImageUrl;
+  final String html;
   EventModel({
     required this.id,
-    required this.body,
+    required this.previewHtml,
     required this.dateCreated,
-    required this.imageUrl,
+    required this.previewImageUrl,
+    required this.html,
   });
   factory EventModel.fromJson(String id, Map<String, dynamic> json) =>
       EventModel(
         id: id,
-        body: json['body'] as String,
+        previewHtml: json['previewHtml'] as String,
         dateCreated: DateTime.parse(json['dateCreated'] as String),
-        imageUrl: json['imageUrl'] as String,
+        previewImageUrl: json['previewImageUrl'] as String,
+        html: json['html'] as String,
       );
 
   Map<String, dynamic> toJson() => _$EventModelToJson(this);

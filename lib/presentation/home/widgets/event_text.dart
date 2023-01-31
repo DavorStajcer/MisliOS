@@ -5,7 +5,6 @@ import 'package:misli_os_app/presentation/common/util/custom_html_tags.dart';
 import 'package:misli_os_app/presentation/common/util/html_redirect.dart';
 import 'package:misli_os_app/presentation/common/util/html_render_matcher.dart';
 import 'package:misli_os_app/presentation/common/values/app_colors.dart';
-import 'package:misli_os_app/presentation/common/values/app_fonts.dart';
 import 'package:misli_os_app/presentation/common/values/app_html_styles.dart';
 import 'package:misli_os_app/presentation/common/values/app_strings.dart';
 import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
@@ -32,7 +31,7 @@ class EventText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Html(
       tagsList: Html.tags..addAll(CustomHtmlTags.allCustomTags),
-      data: eventModel.body,
+      data: eventModel.previewHtml,
       onLinkTap: HtmlRedirect.onHtmlLinkTap,
       style: AppHtmlStyles.mainStyle,
       customRenders: {
@@ -57,9 +56,10 @@ class EventText extends StatelessWidget {
                 ),
               ),
               didHappen
-                  ? const Text(
+                  ? Text(
                       AppStrings.odrzano,
-                      style: AppTextStyles.eventTitle,
+                      style: AppTextStyles.eventTitle
+                          .copyWith(color: AppColors.secondary),
                     )
                   : const SizedBox(),
             ],

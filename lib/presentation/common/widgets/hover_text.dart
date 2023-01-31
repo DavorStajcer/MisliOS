@@ -32,7 +32,7 @@ class _HoverTextState extends State<HoverText> {
       style: isHovered ? widget.hoveredStyle : widget.style,
     );
     log('kIsWeb $kIsWebMobile');
-    if (!kIsWebMobile) {
+    if (kIsWebMobile) {
       return textWidget;
     }
     return MouseRegion(

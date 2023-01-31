@@ -18,18 +18,20 @@ class HomePageReload extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(errorMessage),
-        const SizedBox(
-          height: 20,
-        ),
-        ElevatedButton(
-          onPressed: () => _reloadHomePageData(ref),
-          child: const Text(AppStrings.reloadPage),
-        ),
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(errorMessage),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+            onPressed: () => _reloadHomePageData(ref),
+            child: const Text(AppStrings.reloadPage),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:misli_os_app/domain/interactors/window_size_provider/window_size_provider.dart';
+import 'package:misli_os_app/domain/providers/tab_picked_provider/tab_index_provider.dart';
 import 'package:misli_os_app/presentation/common/values/app_colors.dart';
 import 'package:misli_os_app/presentation/home/pages/home_page.dart';
 import 'package:misli_os_app/presentation/home/widgets/home_drawer.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   final String? eventId;
+  final int? tabId;
   const HomeScreen({
     Key? key,
     this.eventId,
+    this.tabId,
   }) : super(key: key);
 
   @override
@@ -43,13 +47,18 @@ class _HomState extends ConsumerState<HomeScreen> {
       body: LayoutBuilder(
         builder: (context, constraints) {
           final screenSize = Size(constraints.maxWidth, constraints.maxHeight);
+          Future.delayed(const Duration(milliseconds: 200), () {
+            ref.read(tabIndexProvider.notifier).state = widget.tabId;
+          });
 
-          Future.delayed(const Duration(seconds: 1), () {
+          Future.delayed(const Duration(milliseconds: 200), () {
             ref
                 .read(windowSizeProvider.notifier)
                 .onWidnowSizeChanged(screenSize);
           });
-          return HomePage(widget.eventId);
+          return HomePage(
+            widget.eventId,
+          );
         },
       ),
     );

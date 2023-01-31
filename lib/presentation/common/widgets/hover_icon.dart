@@ -29,7 +29,7 @@ class _HoverTextState extends State<HoverIcon> {
       widget.icon,
       color: isHovered ? widget.hoveredColor : widget.color,
     );
-    if (!kIsWebMobile) {
+    if (kIsWebMobile) {
       return iconWidget;
     }
     return MouseRegion(

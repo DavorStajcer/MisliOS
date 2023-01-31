@@ -22,6 +22,7 @@ abstract class AppTextStyles {
   static const TextStyle eventTitle = TextStyle(
     fontSize: 30,
     fontFamily: AppFonts.delaGothicOneRegular,
+    color: Colors.white,
   );
 
   static const TextStyle normal = TextStyle(

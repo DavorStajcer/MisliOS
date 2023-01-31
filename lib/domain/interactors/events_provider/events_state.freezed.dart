@@ -362,14 +362,14 @@ class _$_Data implements _Data {
 
   final List<EventModel> _eventBodies;
   @override
-  List<EventModel> get eventBodies {
+  List<EventModel> get events {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_eventBodies);
   }
 
   @override
   String toString() {
-    return 'EventsState.data(eventBodies: $eventBodies)';
+    return 'EventsState.data(eventBodies: $events)';
   }
 
   @override
@@ -397,7 +397,7 @@ class _$_Data implements _Data {
     required TResult Function() loading,
     required TResult Function(List<EventModel> eventBodies) data,
   }) {
-    return data(eventBodies);
+    return data(events);
   }
 
   @override
@@ -407,7 +407,7 @@ class _$_Data implements _Data {
     TResult Function()? loading,
     TResult Function(List<EventModel> eventBodies)? data,
   }) {
-    return data?.call(eventBodies);
+    return data?.call(events);
   }
 
   @override
@@ -419,7 +419,7 @@ class _$_Data implements _Data {
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(eventBodies);
+      return data(events);
     }
     return orElse();
   }
@@ -462,7 +462,7 @@ class _$_Data implements _Data {
 abstract class _Data implements EventsState {
   const factory _Data(final List<EventModel> eventBodies) = _$_Data;
 
-  List<EventModel> get eventBodies;
+  List<EventModel> get events;
   @JsonKey(ignore: true)
   _$$_DataCopyWith<_$_Data> get copyWith => throw _privateConstructorUsedError;
 }

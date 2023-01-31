@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/interactors/window_size_provider/window_size_provider.dart';
 import 'package:misli_os_app/presentation/home/widgets/top_navigation_big.dart';
+import 'package:misli_os_app/presentation/home/widgets/top_navigation_medium.dart';
 import 'package:misli_os_app/presentation/home/widgets/top_navigation_small.dart';
 
 class TopNavigation extends ConsumerWidget {
@@ -15,7 +16,7 @@ class TopNavigation extends ConsumerWidget {
       child: size.when(
         undefined: () => const SizedBox(),
         full: (_) => const TopNavigationBig(),
-        medium: (_) => const TopNavigationBig(),
+        medium: (_) => const TopNavigationMedium(),
         small: (_) => const TopNavigationSmall(),
       ),
     );
