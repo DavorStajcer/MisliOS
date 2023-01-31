@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/interactors/window_size_provider/window_size_provider.dart';
@@ -25,6 +27,7 @@ class GoToTopOffsetNotifier extends StateNotifier<double> {
   }
 
   _onScroll() {
+    log('gototop: _onScroll, state $state,_pageScrollController.offset ${_pageScrollController.offset}');
     if (!mounted) {
       return;
     }
@@ -33,7 +36,8 @@ class GoToTopOffsetNotifier extends StateNotifier<double> {
       return;
     }
     if (_pageScrollController.offset > 250) {
-      return state;
+      state = initialHeight - 100;
+      return;
     }
     state = initialHeight - (_pageScrollController.offset - 150);
   }
