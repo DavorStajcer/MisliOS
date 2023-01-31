@@ -29,7 +29,7 @@ class TabHovered extends StatelessWidget {
       ),
       child: Text(
         homeTab.text,
-        style: AppTextStyles.tabText,
+        style: AppTextStyles.tabText.copyWith(color: Colors.white),
       ),
     );
   }

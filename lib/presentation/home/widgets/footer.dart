@@ -14,7 +14,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.secondary,
+      color: AppColors.primary,
       height: 150,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -25,18 +25,20 @@ class Footer extends StatelessWidget {
               GestureDetector(
                 onTap: () => HtmlRedirect.redirectoToUrl(
                     'https://www.facebook.com/profile.php?id=100085498653827'),
-                child: const HoverIcon(
+                child: HoverIcon(
                   FontAwesomeIcons.facebook,
-                  hoveredColor: Colors.black54,
+                  hoveredColor: AppColors.ternary,
+                  color: AppColors.secondary,
                 ),
               ),
               const SizedBox(width: 20),
               GestureDetector(
                 onTap: () => HtmlRedirect.redirectoToUrl(
                     'https://www.instagram.com/mislios/'),
-                child: const HoverIcon(
+                child: HoverIcon(
                   FontAwesomeIcons.instagram,
-                  hoveredColor: Colors.black54,
+                  hoveredColor: AppColors.ternary,
+                  color: AppColors.secondary,
                 ),
               ),
             ],
@@ -47,9 +49,9 @@ class Footer extends StatelessWidget {
                 'mailto:${'udrugamislios@gmail.com'}'),
             child: HoverText(
               'udrugamislios@gmail.com',
-              style: AppTextStyles.normal,
+              style: AppTextStyles.normal.copyWith(color: AppColors.secondary),
               hoveredStyle:
-                  AppTextStyles.normal.copyWith(color: Colors.black54),
+                  AppTextStyles.normal.copyWith(color: AppColors.ternary),
             ),
           ),
         ],

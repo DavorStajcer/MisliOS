@@ -2,6 +2,7 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/interactors/events_provider/events_provider.dart';
+import 'package:misli_os_app/presentation/common/values/app_colors.dart';
 import 'package:misli_os_app/presentation/home/widgets/event.dart';
 import 'package:misli_os_app/presentation/home/widgets/show_more_events.dart';
 
@@ -29,7 +30,7 @@ class HomeEventsMedium extends ConsumerWidget {
                   DottedLine(
                     lineThickness: 1,
                     dashLength: 4,
-                    dashColor: Colors.blue.withOpacity(0.4),
+                    dashColor: AppColors.secondary,
                   ),
                 if (eventBodies.length > 1)
                   const SizedBox(

@@ -13,7 +13,7 @@ class HomeStatsFull extends ConsumerWidget {
 
     return statsState.maybeWhen(
       data: (stats) => Container(
-        color: AppColors.secondary,
+        color: AppColors.primary,
         height: 150,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/domain/models/event_model.dart';
 import 'package:misli_os_app/domain/providers/show_more_events_provider/show_more_events_provider.dart';
+import 'package:misli_os_app/presentation/common/values/app_colors.dart';
 import 'package:misli_os_app/presentation/common/values/app_strings.dart';
 import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 import 'package:misli_os_app/presentation/common/widgets/hover_text.dart';
@@ -24,7 +25,7 @@ class ShowMoreEvents extends ConsumerWidget {
           DottedLine(
             lineThickness: 1,
             dashLength: 4,
-            dashColor: Colors.blue.withOpacity(0.4),
+            dashColor: AppColors.secondary,
           ),
         if (shouldShow)
           for (int i = 2; i < eventBodies.length; i++)
@@ -43,7 +44,7 @@ class ShowMoreEvents extends ConsumerWidget {
                   DottedLine(
                     lineThickness: 1,
                     dashLength: 4,
-                    dashColor: Colors.blue.withOpacity(0.4),
+                    dashColor: AppColors.secondary,
                   ),
               ],
             ),
@@ -53,11 +54,11 @@ class ShowMoreEvents extends ConsumerWidget {
             Column(
               children: [
                 const SizedBox(
-                  height: 8,
+                  height: 10,
                 ),
-                const DottedLine(
-                  dashGapColor: Colors.blue,
-                  dashColor: Colors.blue,
+                DottedLine(
+                  dashGapColor: AppColors.secondary,
+                  dashColor: AppColors.secondary,
                   lineThickness: 1,
                 ),
                 const SizedBox(
@@ -66,7 +67,7 @@ class ShowMoreEvents extends ConsumerWidget {
                 DottedLine(
                   lineThickness: 1,
                   dashLength: 4,
-                  dashColor: Colors.blue.withOpacity(0.4),
+                  dashColor: AppColors.secondary,
                 ),
                 const SizedBox(
                   height: 100,
@@ -76,7 +77,7 @@ class ShowMoreEvents extends ConsumerWidget {
             Column(
               children: [
                 Container(
-                  color: Theme.of(context).scaffoldBackgroundColor,
+                  color: AppColors.primary,
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   child: GestureDetector(
                     onTap: () => ref
@@ -86,9 +87,10 @@ class ShowMoreEvents extends ConsumerWidget {
                       shouldShow
                           ? AppStrings.prikaziManje
                           : AppStrings.prikaziSveProjekte,
-                      style: AppTextStyles.normal.copyWith(color: Colors.blue),
-                      hoveredStyle:
-                          AppTextStyles.normal.copyWith(color: Colors.grey),
+                      style: AppTextStyles.normal
+                          .copyWith(color: AppColors.secondary),
+                      hoveredStyle: AppTextStyles.normal
+                          .copyWith(color: AppColors.ternary),
                     ),
                   ),
                 )

@@ -12,7 +12,7 @@ class HomeStatsSmall extends ConsumerWidget {
     final statsGroupsOfTwo = ref.watch(smallStatsProvider);
 
     return Container(
-      color: AppColors.secondary,
+      color: AppColors.primary,
       height: 150,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

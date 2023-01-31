@@ -26,18 +26,17 @@ class Event extends ConsumerWidget {
       },
       child: HoverContainer(
         hoveredDecoration: BoxDecoration(
-          color: AppColors.eventBackground.withOpacity(0.85),
+          border: Border.all(style: BorderStyle.none),
+          borderRadius: BorderRadius.circular(24),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
-              spreadRadius: 2,
-              blurRadius: 2,
-              offset: const Offset(0, 3), // changes position of shadow
+              color: AppColors.ternary.withOpacity(0.1),
+              spreadRadius: 1,
+              blurRadius: 1,
             )
           ],
         ),
-        decoration:
-            BoxDecoration(color: AppColors.eventBackground.withOpacity(0.65)),
+        decoration: BoxDecoration(color: AppColors.primary.withOpacity(0.65)),
         child: windowSizeState.when(
           full: (Size size) => EventFull(
             eventModel: eventModel,

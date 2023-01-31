@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
-  //static final Color primary = HexColor.fromHex('#3d5a80');
-  static final Color primary = secondary;
-  //static final Color eventBackground = HexColor.fromHex('#98c1d9');
-  static final Color eventBackground = secondary;
-  static final Color secondary = HexColor.fromHex('#293241');
+  static final Color primary = HexColor.fromHex('#293241');
+  static final Color secondary = HexColor.fromHex('#3d5a80');
+  static final Color ternary = HexColor.fromHex('#98c1d9');
 }
 
 extension HexColor on Color {
