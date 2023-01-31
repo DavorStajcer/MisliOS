@@ -19,55 +19,73 @@ class CustomContentMedium extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 50),
-      child: Html(
-        data: body,
-        onLinkTap: HtmlRedirect.onHtmlLinkTap,
-        tagsList: Html.tags..addAll(CustomHtmlTags.allCustomTags),
-        style: AppHtmlStyles.mainStyle,
-        customRenders: {
-          HtmlRenderMatcher.tagName(CustomHtmlTags.middle):
-              CustomRender.widget(widget: (renderContext, buildChildren) {
-            String text = renderContext.tree.element!.attributes['text'] ?? '';
-            bool underlined =
-                renderContext.tree.element!.attributes['underlined'] != null;
-            bool highlight =
-                renderContext.tree.element!.attributes['highlight'] != null;
+      padding: const EdgeInsets.symmetric(vertical: 20),
+      child: Row(
+        children: [
+          const Expanded(
+            child: SizedBox(),
+          ),
+          Expanded(
+            flex: 4,
+            child: Html(
+              data: body,
+              onLinkTap: HtmlRedirect.onHtmlLinkTap,
+              tagsList: Html.tags..addAll(CustomHtmlTags.allCustomTags),
+              style: AppHtmlStyles.mainStyle,
+              customRenders: {
+                HtmlRenderMatcher.tagName(CustomHtmlTags.middle):
+                    CustomRender.widget(widget: (renderContext, buildChildren) {
+                  String text =
+                      renderContext.tree.element!.attributes['text'] ?? '';
+                  bool underlined =
+                      renderContext.tree.element!.attributes['underlined'] !=
+                          null;
+                  bool highlight =
+                      renderContext.tree.element!.attributes['highlight'] !=
+                          null;
 
-            return Container(
-              width: double.infinity,
-              alignment: Alignment.center,
-              child: Text(
-                text,
-                style: AppTextStyles.eventTitle.copyWith(
-                  decoration: underlined ? TextDecoration.underline : null,
-                  color: highlight ? AppColors.ternary : null,
-                ),
-              ),
-            );
-          }),
-          HtmlRenderMatcher.tagName(CustomHtmlTags.customImage):
-              CustomRender.widget(widget: (renderContext, buildChildren) {
-            String? imageUrl =
-                renderContext.tree.element?.attributes['imageurl'];
-            return imageUrl != null
-                ? Container(
+                  return Container(
                     width: double.infinity,
-                    height: 350,
                     alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(24)),
-                      image: DecorationImage(
-                        image: NetworkImage(
-                          imageUrl,
-                        ),
-                        fit: BoxFit.fitHeight,
+                    child: Text(
+                      text,
+                      style: AppTextStyles.eventTitle.copyWith(
+                        decoration:
+                            underlined ? TextDecoration.underline : null,
+                        color: highlight ? AppColors.ternary : null,
                       ),
                     ),
-                  )
-                : const SizedBox();
-          }),
-        },
+                  );
+                }),
+                HtmlRenderMatcher.tagName(CustomHtmlTags.customImage):
+                    CustomRender.widget(widget: (renderContext, buildChildren) {
+                  String? imageUrl =
+                      renderContext.tree.element?.attributes['imageurl'];
+                  return imageUrl != null
+                      ? Container(
+                          width: double.infinity,
+                          height: 350,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(24)),
+                            image: DecorationImage(
+                              image: NetworkImage(
+                                imageUrl,
+                              ),
+                              fit: BoxFit.fitHeight,
+                            ),
+                          ),
+                        )
+                      : const SizedBox();
+                }),
+              },
+            ),
+          ),
+          const Expanded(
+            child: SizedBox(),
+          ),
+        ],
       ),
     );
   }

@@ -52,6 +52,9 @@ class EventText extends StatelessWidget {
             children: [
               Expanded(
                 child: Column(
+                  crossAxisAlignment: isSmallScreen
+                      ? CrossAxisAlignment.center
+                      : CrossAxisAlignment.start,
                   children: [
                     Text(
                       text,
