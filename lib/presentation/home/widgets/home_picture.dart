@@ -16,7 +16,6 @@ class HomePicture extends ConsumerWidget {
     log('windowsizestuff: $windowSizeState');
     return mainImageState.maybeWhen(
       data: (imageUrl) => SizedBox(
-        height: 400,
         width: double.infinity,
         child: Stack(
           children: [
@@ -24,6 +23,10 @@ class HomePicture extends ConsumerWidget {
               width: double.infinity,
               child: Image.network(
                 imageUrl,
+                height: windowSizeState.maybeWhen(
+                  small: (_) => 250,
+                  orElse: () => 400,
+                ),
                 fit: windowSizeState.maybeWhen(
                   small: (_) => BoxFit.fitHeight,
                   orElse: () => BoxFit.fitWidth,

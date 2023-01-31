@@ -15,9 +15,9 @@ class EventSmall extends StatelessWidget {
     return Column(
       children: [
         GestureDetector(
-          onTap: () => GoRouter.of(context).go('event/${eventModel.id}'),
+          onTap: () => GoRouter.of(context).go('/event/${eventModel.id}'),
           child: Container(
-            height: 350,
+            height: 150,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.all(Radius.circular(24)),
@@ -25,7 +25,7 @@ class EventSmall extends StatelessWidget {
                 image: NetworkImage(
                   eventModel.previewImageUrl,
                 ),
-                fit: BoxFit.fitHeight,
+                fit: BoxFit.fitWidth,
               ),
             ),
           ),
@@ -38,6 +38,7 @@ class EventSmall extends StatelessWidget {
             SizedBox(
               child: EventText(
                 eventModel: eventModel,
+                isSmallScreen: true,
               ),
             ),
           ],

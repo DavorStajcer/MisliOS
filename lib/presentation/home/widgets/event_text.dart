@@ -11,9 +11,11 @@ import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 
 class EventText extends StatelessWidget {
   final EventModel eventModel;
+  final bool isSmallScreen;
   const EventText({
     super.key,
     required this.eventModel,
+    this.isSmallScreen = false,
   });
 
 /*   Future<String> readTestHtml() async {
@@ -48,18 +50,26 @@ class EventText extends StatelessWidget {
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                text,
-                style: AppTextStyles.eventTitle.copyWith(
-                  decoration: underlined ? TextDecoration.underline : null,
-                  color: highlight ? AppColors.ternary : null,
+              Expanded(
+                child: Column(
+                  children: [
+                    Text(
+                      text,
+                      style: AppTextStyles.eventTitle.copyWith(
+                        decoration:
+                            underlined ? TextDecoration.underline : null,
+                        color: highlight ? AppColors.ternary : null,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               didHappen
                   ? Text(
                       AppStrings.odrzano,
-                      style: AppTextStyles.eventTitle
-                          .copyWith(color: AppColors.secondary),
+                      style: AppTextStyles.eventTitle.copyWith(
+                          color: AppColors.secondary,
+                          fontSize: isSmallScreen ? 12 : null),
                     )
                   : const SizedBox(),
             ],

@@ -14,16 +14,16 @@ class HomeStatsSmall extends ConsumerWidget {
     return Container(
       color: AppColors.primary,
       height: 150,
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           for (var stats in statsGroupsOfTwo)
-            Column(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 for (var i = 0; i < stats.length; i++)
                   Container(
-                    margin: i == 0 ? const EdgeInsets.only(bottom: 15) : null,
+                    margin: i == 0 ? const EdgeInsets.only(right: 15) : null,
                     child: StatText(
                       label: stats[i].name,
                       count: stats[i].count,

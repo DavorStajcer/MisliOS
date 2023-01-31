@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:misli_os_app/domain/providers/home_page_loading_provider/home_page_loading_provider.dart';
 import 'package:misli_os_app/domain/providers/page_scroll_controller_provider/page_scroll_conroller_probider.dart';
+import 'package:misli_os_app/presentation/common/values/app_colors.dart';
 import 'package:misli_os_app/presentation/home/widgets/event_content.dart';
 import 'package:misli_os_app/presentation/home/widgets/footer.dart';
 import 'package:misli_os_app/presentation/home/widgets/go_to_top.dart';
@@ -43,14 +44,16 @@ class HomePage extends ConsumerWidget {
                 children: [
                   Column(
                     children: [
-                      const TopNavigation(),
+                      TopNavigation(
+                        showDivider: !isNaslovnica,
+                      ),
                       Container(
                         constraints: BoxConstraints(
                             minHeight:
                                 MediaQuery.of(context).size.height - 250),
                         child: eventId != null
                             ? EventContent(eventId!)
-                            : TabContent(),
+                            : const TabContent(),
                       ),
                       const Footer(),
                     ],

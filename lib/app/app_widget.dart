@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:misli_os_app/presentation/common/widgets/navigation_error_page.dart';
 import 'package:misli_os_app/presentation/home/widgets/home_screen.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -12,6 +13,10 @@ final GlobalKey<NavigatorState> shellNavigatorKey =
 final _router = GoRouter(
   navigatorKey: _rootNavigatorKey,
   initialLocation: '/',
+  errorBuilder: (context, state) {
+    log('erorr navigating ${state.error}');
+    return const NavigationErrorPage();
+  },
   routes: [
     GoRoute(
       path: '/',
