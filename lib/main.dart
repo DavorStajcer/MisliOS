@@ -7,8 +7,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:misli_os_app/app/app_enviroment.dart';
 import 'package:misli_os_app/app/app_widget.dart';
 import 'package:misli_os_app/common/firebase_options.dart';
+import 'package:url_strategy/url_strategy.dart';
 
 mainCommon(AppEnvironment environment) async {
+  setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
   EnvInfo.initialize(environment);
   await Firebase.initializeApp(
