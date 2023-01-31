@@ -3,6 +3,7 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:misli_os_app/presentation/common/util/custom_html_tags.dart';
 import 'package:misli_os_app/presentation/common/util/html_redirect.dart';
 import 'package:misli_os_app/presentation/common/util/html_render_matcher.dart';
+import 'package:misli_os_app/presentation/common/values/app_html_styles.dart';
 import 'package:misli_os_app/presentation/common/values/app_text_styles.dart';
 import 'package:misli_os_app/presentation/home/widgets/go_to_top.dart';
 
@@ -24,6 +25,7 @@ class CustomContentSmall extends StatelessWidget {
             data: body,
             onLinkTap: HtmlRedirect.onHtmlLinkTap,
             tagsList: Html.tags..addAll(CustomHtmlTags.allCustomTags),
+            style: AppHtmlStyles.mainStyle,
             customRenders: {
               HtmlRenderMatcher.tagName(CustomHtmlTags.middle):
                   CustomRender.widget(widget: (renderContext, buildChildren) {

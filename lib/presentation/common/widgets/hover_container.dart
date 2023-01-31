@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:misli_os_app/presentation/common/values/is_web_mobile.dart';
 
 class HoverContainer extends StatefulWidget {
   final Widget child;
@@ -23,6 +25,9 @@ class _HoverTextState extends State<HoverContainer> {
 
   @override
   Widget build(BuildContext context) {
+    if (!kIsWebMobile) {
+      return widget.child;
+    }
     return MouseRegion(
       onHover: (_) => onHovered(),
       onExit: (_) => onUnHovered(),

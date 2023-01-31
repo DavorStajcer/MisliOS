@@ -36,10 +36,6 @@ final _router = GoRouter(
           ),
         );
       },
-      /*        pageBuilder: (context, state) {
-            final String eventId = state.params['eventId'] ?? '';
-            return NoTransitionPage(child: );
-          }, */
     )
   ],
 );

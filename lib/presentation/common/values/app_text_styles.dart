@@ -5,6 +5,7 @@ abstract class AppTextStyles {
   static const TextStyle tabText = TextStyle(
     fontSize: 18,
     fontFamily: AppFonts.delaGothicOneRegular,
+    color: Colors.white,
   );
   static TextStyle logo = TextStyle(
     fontSize: 18,
@@ -20,13 +21,12 @@ abstract class AppTextStyles {
 
   static const TextStyle eventTitle = TextStyle(
     fontSize: 30,
-    color: Colors.black,
     fontFamily: AppFonts.delaGothicOneRegular,
   );
 
   static const TextStyle normal = TextStyle(
     fontSize: 16,
-    color: Colors.black,
     fontFamily: AppFonts.delaGothicOneRegular,
+    color: Colors.white,
   );
 }

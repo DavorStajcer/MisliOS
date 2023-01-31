@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:misli_os_app/presentation/common/values/is_web_mobile.dart';
 
 class HoverIcon extends StatefulWidget {
   final IconData icon;
@@ -23,13 +25,17 @@ class _HoverTextState extends State<HoverIcon> {
 
   @override
   Widget build(BuildContext context) {
+    final iconWidget = Icon(
+      widget.icon,
+      color: isHovered ? widget.hoveredColor : widget.color,
+    );
+    if (!kIsWebMobile) {
+      return iconWidget;
+    }
     return MouseRegion(
       onHover: (_) => onHovered(),
       onExit: (_) => onUnHovered(),
-      child: Icon(
-        widget.icon,
-        color: isHovered ? widget.hoveredColor : widget.color,
-      ),
+      child: iconWidget,
     );
   }
 }
