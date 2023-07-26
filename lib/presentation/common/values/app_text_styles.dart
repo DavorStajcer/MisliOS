@@ -9,7 +9,6 @@ abstract class AppTextStyles {
   );
   static TextStyle logo = TextStyle(
     fontSize: 18,
-    fontFamily: AppFonts.kgSummerSunshineShadow,
     color: Colors.white.withOpacity(0.8),
   );
 
